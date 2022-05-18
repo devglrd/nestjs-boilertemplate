@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  email: String!
+  firstName: String!
+  lastName: String!
+  avatar: String
+}
+
+type UserCreateOutput {
+  user: User!
+}
+
+type UserIndexOutput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  avatar: String!
+}
+
+type AuthLoginOutput {
+  accessToken: String!
+}
+
+type RegisterOutput {
+  user: User!
+}
+
+type Query {
+  sayHello: String!
+  me: User!
+  users: [UserIndexOutput!]!
+}
+
+type Mutation {
+  authLogin(username: String!, password: String!): AuthLoginOutput!
+  register(input: UserCreateInput!): RegisterOutput!
+  userCreate(input: UserCreateInput!): UserCreateOutput!
+}
+
+input UserCreateInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  avatar: String
+}
