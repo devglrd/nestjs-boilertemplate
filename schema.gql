@@ -30,7 +30,6 @@ type RegisterOutput {
 }
 
 type Query {
-  sayHello: String!
   me: User!
   users: [UserIndexOutput!]!
 }
